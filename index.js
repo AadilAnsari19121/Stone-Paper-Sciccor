@@ -40,15 +40,19 @@ const iconsong = document.getElementById('play_pause_song_icon');
 window.onload = function () {
 	var audio = document.getElementById('audioPlayer');
 	audio.pause();
+	toggleButton.innerHTML = `<img src="musicoff.png" alt="musicon">`;
+	console.log('paused');
 };
 
 toggleButton.addEventListener('click', () => {
 	if (audioPlayer.paused) {
 		audioPlayer.play();
 		toggleButton.innerHTML = `<img src="musicon.png" alt="musicon">`;
+		console.log('play');
 	} else {
 		audioPlayer.pause();
 		toggleButton.innerHTML = `<img src="musicoff.png" alt="musicon">`;
+		console.log('paused');
 	}
 });
 
