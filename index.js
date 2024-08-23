@@ -39,7 +39,7 @@ const iconsong = document.getElementById('play_pause_song_icon');
 
 window.onload = function () {
 	var audio = document.getElementById('audioPlayer');
-	audio.play();
+	audio.pause();
 };
 
 toggleButton.addEventListener('click', () => {
