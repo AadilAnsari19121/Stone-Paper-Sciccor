@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .voice,
+        .mute2 {
+            width: 50px;
+            height: 50px;
+            fill: #000;
+            transition: fill 0.3s ease;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        .mute2 {
+            display: none;
+            /* Initially hidden */
+        }
+
+        #toggleButton {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background-color: #9c27b0;
+            border: 5px solid var(--primary_ele_color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            object-fit: cover;
+            overflow: hidden;
+        }
+
+
+
+        #toggleButton:hover {
+            transform: scale(0.8);
+        }
+
+        #toggleButton img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+            font-size: var(--size);
+            user-select: none;
+            fill: var(--color);
+            height: 30px;
+            width: 30px;
+        }
+
+
+        #toggleButton:checked #play_pause_song_icon {
+            display: none;
+        }
+
+        #toggleButton:checked #pause_icon {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <audio id="audioPlayer" src="music.m4a" loop autoplay></audio>
+    <button id="toggleButton">
+        <img src="musicon.png" alt="musicon"><!-- <i class="ph ph-speaker-slash"></i> -->
+    </button>
+
+    <script>
+        const toggleButton = document.getElementById('toggleButton');
+        const audioPlayer = document.getElementById('audioPlayer');
+        const iconsong = document.getElementById('play_pause_song_icon');
+
+
+        // Play the music initially
+        audioPlayer.play();
+
+        toggleButton.addEventListener('click', () => {
+            if (audioPlayer.paused) {
+                // If paused, play the music and show the voice (unmute) icon
+                audioPlayer.play();
+                toggleButton.innerHTML = `<img src="musicon.png" alt="musicon">`;
+
+            } else {
+                // If playing, pause the music and show the mute icon
+                audioPlayer.pause();
+                toggleButton.innerHTML = `<img src="musicoff.png" alt="musicon">`;
+            }
+        });
+    </script>
+</body>
+
+</html>

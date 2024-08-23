@@ -30,12 +30,29 @@ const how_to_play = document.getElementById('how_to_play');
 const start_game_btn = document.getElementById('start_game_btn');
 const setting = document.querySelector('.setting');
 const setting_menu = document.querySelector('.setting-menu');
-
-
-
 let gamePlayPageDisplay = false;
 let gameStarted = false; // This flag ensures the game starts only once
+const toggleButton = document.getElementById('toggleButton');
+const audioPlayer = document.getElementById('audioPlayer');
+const iconsong = document.getElementById('play_pause_song_icon');
 
+
+window.onload = function () {
+	var audio = document.getElementById('audioPlayer');
+	audio.play();
+};
+
+toggleButton.addEventListener('click', () => {
+	if (audioPlayer.paused) {
+		audioPlayer.play();
+		toggleButton.innerHTML = `<img src="musicon.png" alt="musicon">`;
+	} else {
+		audioPlayer.pause();
+		toggleButton.innerHTML = `<img src="musicoff.png" alt="musicon">`;
+	}
+});
+
+       
 const gamePlayPage = document.getElementById('game_play_page');
 let total_game_round = 5;
 

@@ -75,6 +75,40 @@ a:hover{
   justify-content: center;
   align-items: center;
 }
+
+#toggleButton {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #9c27b0;
+  border: 5px solid var(--primary_ele_color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+
+
+#toggleButton:hover img{
+  transform: scale(0.8);
+}
+
+#toggleButton img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  font-size: var(--size);
+  user-select: none;
+  fill: var(--color);
+  height: 30px;
+  width: 30px;
+}
+
+
 /* .svg-icon{
   stroke: #4caf50;
 } */
