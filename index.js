@@ -47,15 +47,15 @@ window.addEventListener("load", (event) => {
 	}, 2500);
 });
 
+
+
 toggleButton.addEventListener('click', () => {
 	if (audioPlayer.paused) {
 		audioPlayer.play();
 		toggleButton.innerHTML = `<img src="musicon.png" alt="musicon">`;
-		console.log('play');
 	} else {
 		audioPlayer.pause();
 		toggleButton.innerHTML = `<img src="musicoff.png" alt="musicon">`;
-		console.log('paused');
 	}
 });
 
