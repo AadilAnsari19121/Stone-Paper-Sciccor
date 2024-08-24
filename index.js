@@ -35,7 +35,17 @@ let gameStarted = false; // This flag ensures the game starts only once
 const toggleButton = document.getElementById('toggleButton');
 const audioPlayer = document.getElementById('audioPlayer');
 const iconsong = document.getElementById('play_pause_song_icon');
-
+const loaderhamaster = document.getElementById('loader');
+window.addEventListener("load", (event) => {
+	var audio = document.getElementById('audioPlayer');
+	audio.play();
+	loaderhamaster.style.display = 'flex';
+	homepage.style.display='none';
+	setTimeout(() => {
+		loaderhamaster.style.display = 'none';
+		homepage.style.display='flex';
+	}, 2500);
+});
 
 window.onload = function () {
 	var audio = document.getElementById('audioPlayer');
