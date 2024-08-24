@@ -36,9 +36,10 @@ const toggleButton = document.getElementById('toggleButton');
 const audioPlayer = document.getElementById('audioPlayer');
 const iconsong = document.getElementById('play_pause_song_icon');
 const loaderhamaster = document.getElementById('loader');
+
 window.addEventListener("load", (event) => {
 	var audio = document.getElementById('audioPlayer');
-	audio.play();
+	// audio.play();
 	loaderhamaster.style.display = 'flex';
 	homepage.style.display='none';
 	setTimeout(() => {
