@@ -47,13 +47,6 @@ window.addEventListener("load", (event) => {
 	}, 2500);
 });
 
-window.onload = function () {
-	var audio = document.getElementById('audioPlayer');
-	audio.pause();
-	toggleButton.innerHTML = `<img src="musicoff.png" alt="musicon">`;
-	console.log('paused');
-};
-
 toggleButton.addEventListener('click', () => {
 	if (audioPlayer.paused) {
 		audioPlayer.play();
